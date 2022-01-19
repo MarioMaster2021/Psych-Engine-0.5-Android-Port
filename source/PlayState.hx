@@ -51,6 +51,7 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
+import LoadingState;
 
 #if sys
 import sys.FileSystem;
