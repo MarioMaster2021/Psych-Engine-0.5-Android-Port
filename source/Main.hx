@@ -24,7 +24,7 @@ class Main extends Sprite
 
 	public static var fpsVar:FPS;
 
-	public static var path:String = System.applicationStorageDirectory;
+	public static var Datapath:String = System.applicationStorageDirectory;
 
 
 
