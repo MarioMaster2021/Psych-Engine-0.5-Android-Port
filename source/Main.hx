@@ -24,9 +24,22 @@ class Main extends Sprite
 
 	public static var fpsVar:FPS;
 
-	public static var Datapath:String = System.applicationStorageDirectory;
+	private static var dataPath:String = null;
 
-
+        static public function getDataPath():String 
+        {
+            #if android
+            if (dataPath != null && dataPath.length > 0) 
+            {
+                return dataPath;
+            } 
+            else 
+            {
+                 dataPath = System.applicationStorageDirectory;
+            }
+            return dataPath;
+            #end
+        }
 
 	public static function main():Void
 	{
@@ -74,6 +87,7 @@ class Main extends Sprite
 		#if !debug
 		initialState = TitleState;
 		#end
+
 
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
